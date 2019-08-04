@@ -1,0 +1,21 @@
+
+Operation type : standart multiplication
+matrix sizes: 50x50, 50x50
+Operation duration: 0.001388 seconds
+
+Operation type : transposed multiplication
+matrix sizes: 50x50, 50x50
+Operation duration: 0.00152 seconds
+
+transposed multiplication is 0.913158 times faster
+___________________________________________________ 
+Operation type : standart multiplication
+matrix sizes: 2000x2000, 2000x2000
+Operation duration: 74.1668 seconds
+
+Operation type : transposed multiplication
+matrix sizes: 2000x2000, 2000x2000
+Operation duration: 47.6182 seconds
+
+transposed multiplication is 1.55753 times faster
+___________________________________________________ 

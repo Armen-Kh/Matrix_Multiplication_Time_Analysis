@@ -1,0 +1,47 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 60.88     74.13    74.13                             multMatrix(Matrix const&, Matrix const&, Matrix&)
+ 38.99    121.60    47.47                             multMatrixTranspose(Matrix const&, Matrix const&, Matrix&)
+  0.08    121.70     0.10                             readMatrix(Matrix&, std::basic_ifstream<char, std::char_traits<char> >&)
+  0.05    121.76     0.06        2    30.02    30.02  transposeMatrix(Matrix const&, Matrix&)
+  0.05    121.82     0.06                             writeMatrix(unsigned long, Matrix const&, std::basic_ofstream<char, std::char_traits<char> >&)
+  0.00    121.82     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN6MatrixC2Ev
+  0.00    121.82     0.00        1     0.00     0.00  _GLOBAL__sub_I_main
+
+			Call graph
+
+
+granularity: each sample hit covers 2 byte(s) for 0.01% of 121.82 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     60.8   74.13    0.00                 multMatrix(Matrix const&, Matrix const&, Matrix&) [1]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     39.0   47.47    0.06                 multMatrixTranspose(Matrix const&, Matrix const&, Matrix&) [2]
+                0.06    0.00       2/2           transposeMatrix(Matrix const&, Matrix&) [4]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]      0.1    0.10    0.00                 readMatrix(Matrix&, std::basic_ifstream<char, std::char_traits<char> >&) [3]
+-----------------------------------------------
+                0.06    0.00       2/2           multMatrixTranspose(Matrix const&, Matrix const&, Matrix&) [2]
+[4]      0.0    0.06    0.00       2         transposeMatrix(Matrix const&, Matrix&) [4]
+-----------------------------------------------
+                                                 <spontaneous>
+[5]      0.0    0.06    0.00                 writeMatrix(unsigned long, Matrix const&, std::basic_ofstream<char, std::char_traits<char> >&) [5]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [31]
+[13]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN6MatrixC2Ev [13]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [31]
+[14]     0.0    0.00    0.00       1         _GLOBAL__sub_I_main [14]
+-----------------------------------------------
+
+Index by function name
+
+  [13] _GLOBAL__sub_I__ZN6MatrixC2Ev [3] readMatrix(Matrix&, std::basic_ifstream<char, std::char_traits<char> >&) [2] multMatrixTranspose(Matrix const&, Matrix const&, Matrix&)
+  [14] _GLOBAL__sub_I_main     [5] writeMatrix(unsigned long, Matrix const&, std::basic_ofstream<char, std::char_traits<char> >&)
+   [1] multMatrix(Matrix const&, Matrix const&, Matrix&) [4] transposeMatrix(Matrix const&, Matrix&)
